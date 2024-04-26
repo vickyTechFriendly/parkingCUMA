@@ -18,7 +18,7 @@ async function getOcupacionM() {
 async function getOcupacionC() {
     return getOcupacion(process.env.idC);
 }
-const plataforma = process.env.plataforma;
+const plataform = "plataforma:9090";
 
 const dispositivos = [
     {
@@ -58,7 +58,7 @@ async function publishTelemetry(dispositivo) {
             ocupacion: dispositivo.ocupacion,
         };
 
-        await axios.post(`https://${process.env.plataforma}/api/v1/${dispositivo.accessToken}/telemetry`, telemetryData, {
+        await axios.post(`https://${plataform}/api/v1/${dispositivo.accessToken}/telemetry`, telemetryData, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -69,7 +69,7 @@ async function publishTelemetry(dispositivo) {
             totales: dispositivo.totales,
         };
 
-        await axios.post(`https://${process.env.plataforma}/api/v1/${dispositivo.accessToken}/attributes`, attributeData, {
+        await axios.post(`https://${plataform}/api/v1/${dispositivo.accessToken}/attributes`, attributeData, {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
