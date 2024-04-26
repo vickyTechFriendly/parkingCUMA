@@ -8,4 +8,4 @@ RUN npm install
 # Bundle app source
 COPY . .
 # ejecutar los scripts
-CMD ["node", "--openssl-config=./openssl.cnf", "index.js"] 
+CMD ["node", "index.js"] 
