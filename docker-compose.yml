@@ -1,0 +1,7 @@
+version: "3"
+services:
+  node:
+    build: .
+    env_file: .env
+    container_name: node-parkingcuma
+    restart: always
