@@ -5,3 +5,10 @@ services:
     env_file: .env
     container_name: node-parkingcuma
     restart: always
+    environment:
+      TZ: Europe/Madrid
+    networks:
+      - web
+networks:
+  web:
+    external: true
